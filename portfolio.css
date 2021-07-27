@@ -1,0 +1,58 @@
+:root {
+    --project_width : 390px;
+    --project_height : 300px;
+  }
+
+/* * {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    text-align: center;
+} */
+
+#projects .project {
+  width: var(--project_width);
+  height: var(--project_height);
+  position: relative;
+  border : 1px solid blue;
+  opacity: 1;
+}
+
+
+/* ********* image animation ************ */
+#projects .project::before {
+    width: var(--project_width);
+    height: var(--project_height);
+    content: "";
+    background : white;
+    position: absolute;
+    z-index: -1;
+    transition: opacity 2s;
+  }
+  
+  #projects .project:hover{
+    opacity: 0;
+  }
+
+  /* #projects .project:hover::before{
+    /* the syntax is not intuitive but it relate to hover over #projects .project::before */
+    z-index: 1;
+    /* opacity: 0; */
+  } */
+
+/* ********* text animation ************ */
+#projects .project:hover .project_text_animation {
+    top: 0;
+    color : rgba(0,0,0,1);
+}
+
+.project_text_animation{
+    position: relative;
+    /* make it outside the window */
+    color : rgba(0,0,0,0);
+    top : -20px; 
+    transition: top 0.5s , color 0.5s;
+}
+
