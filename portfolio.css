@@ -10,7 +10,17 @@ body {
   font-family: "Raleway", sans-serif;
 }
 
+button {
+  cursor: pointer;
+}
+
 /* *********** first page front and back ***********  */
+
+#projects {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
 
 .project_container {
   width: var(--main_background_image_width);
@@ -76,7 +86,6 @@ body {
   padding: 7px 25px;
   transition: opacity var(--transition_period), bottom var(--transition_period);
   transition-timing-function: val(--transition_timing_function_value);
-  cursor: pointer;
   font-size: 110%;
 }
 
@@ -87,15 +96,53 @@ body {
 }
 
 /* *********** popup ***********  */
-#center-screen-popup {
-  position: absolute;
+
+.center_screen {
+  position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 100;
+  z-index: -1;
+}
+
+.popup {
+  width: 60%;
+  height: 95vh;
+  background: white;
 }
 
 .project_details_container {
   display: flex;
   flex-direction: column;
+}
+
+.project_details_container_top {
+  flex: 6;
+}
+
+.project_details_container_bottom {
+  flex: 4;
+  padding: 20px;
+  border-top: 2px solid black;
+  position: relative;
+}
+
+.project_details_container_bottom .sub_title {
+  border-bottom: 1px solid black;
+  padding-bottom: 10px;
+  color: #c0c0c0;
+}
+
+.project_details_container_bottom .button_more_info {
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 10px;
+}
+
+.project_details_container_bottom .button_close {
+  border: none;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: 10px;
 }

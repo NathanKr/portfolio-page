@@ -15,7 +15,22 @@
     <link rel="stylesheet" href="./portfolio.css" />
   </head>
   <body>
-    <div id='projects'></div>
+    <div id="id_popup_details">
+      <div
+        class="center_screen popup project_details_container"
+        style="background: white"
+      >
+        <div class="project_details_container_top"></div>
+        <div class="project_details_container_bottom">
+          <h2 class='title'></h2>
+          <h4 class="sub_title"></h4>
+          <p class="description"></p>
+          <button class="button_more_info">More Info</button>
+          <button class="button_close">X</button>
+        </div>
+      </div>
+    </div>
+    <div id="projects" style="position: absolute"></div>
     <!-- this must be last because i am counting on element being ready -->
     <script src="./portfolio_logic.js"></script>
     <script src="./storage/projects_storage.js"></script>

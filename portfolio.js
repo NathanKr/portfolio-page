@@ -1,3 +1,5 @@
+// ************* mouse enter \ exit **************
+
 function mouseHelper(_this, textTop, textOpacity, buttonBottom, buttonOpacity) {
   const elemTopText = _this.querySelector(".top_text");
   elemTopText.style.top = textTop;
@@ -21,7 +23,7 @@ function resetState() {
   newFunc();
 }
 
-function init() {
+function initMouseEnterExit() {
   const projectsRootElem = document.getElementById("projects");
   for (let index = 0; index < projects.length; index++) {
     const project = projects[index];
@@ -38,4 +40,33 @@ function init() {
   }
 }
 
-init();
+//  ************* details **************
+function initDetails() {
+  const elemCenterScreen = document.querySelector(
+    "#id_popup_details .center_screen"
+  );
+  const buttonClose = document.querySelector("#id_popup_details .button_close");
+  buttonClose.onclick = () => {
+    elemCenterScreen.style.zIndex = "-1";
+  };
+
+  const listLearnMoreButton = document.querySelectorAll(
+    ".project_container_back_side .bottom_button"
+  );
+
+  listLearnMoreButton.forEach((elemLearnMoreButton) => {
+    const index = elemLearnMoreButton.getAttribute(
+      constants.DATA_INDEX_ATTRIBUE
+    );
+
+    elemLearnMoreButton.onclick = () => {
+      const objProject = projects[index];
+      elemCenterScreen.style.zIndex = "100";
+      potfolioView.fillDetailsDomElement(objProject);
+    };
+  });
+}
+
+// main
+initMouseEnterExit();
+initDetails();

@@ -4,7 +4,8 @@ function Project(
   techs,
   description,
   backgroundImgFileName,
-  imgsSliderFileNames
+  imgsSliderFileNames,
+  index
 ) {
   this.title = title;
   this.subTitle = subTitle;
@@ -12,9 +13,9 @@ function Project(
   this.techs = techs;
   this.backgroundImgFileName = backgroundImgFileName;
   this.imgsSliderFileNames = imgsSliderFileNames;
+  this.index = index;
 }
 
 const constants = {
-  PROJECT_CLASS_NAME : 'project',
-  TEXT_ON_BACKGROUND_IMG_PROJECT_CLASS_NAME : 'project_text_animation',
+  DATA_INDEX_ATTRIBUE : 'data-index'
 }
