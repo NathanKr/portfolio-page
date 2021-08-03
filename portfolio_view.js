@@ -3,12 +3,9 @@ function getImageUrl(imageFileName){
 }
 
 const potfolioView = {
-    createProjectDomElement : function (fatherDomElement,projectLogicObj){
-        console.log(projectLogicObj);
-        const class_name = constants.TEXT_ON_BACKGROUND_IMG_PROJECT_CLASS_NAME
-        let projectDomElement = document.createElement('div');
-        projectDomElement.innerHTML += `<h2 class=${class_name}>${projectLogicObj.title}</h2>`
-        projectDomElement.innerHTML += `<h4 class=${class_name}>${projectLogicObj.subTitle}</h4>`
+    createNewProjectDomElement : function (fatherDomElement,projectLogicObj){
+        const imagePath = getImageUrl(projectLogicObj.backgroundImgFileName)
+        const background = `url('${imagePath}')`;
         let techs = ""
         for (let index = 0; index < projectLogicObj.techs.length; index++) {
             
@@ -20,15 +17,31 @@ const potfolioView = {
                 techs += ' / ';
             }
         }
-        projectDomElement.innerHTML += `<p class=${class_name}>${techs}</p>`
-        const imagePath = getImageUrl(projectLogicObj.backgroundImgFileName)
-        projectDomElement.style.background = `url('${imagePath}')`;
-        // projectDomElement.style.color = "rgba(0,0,0,0)";
-        // projectDomElement.style.opacity = 0.5;
-        projectDomElement.className = constants.PROJECT_CLASS_NAME
-        
-        fatherDomElement.appendChild(projectDomElement)
-        return projectDomElement;
-    }
+
+        const projectContainer = `<div class="project_container">
+        <div
+          class="project_container_front_side"
+          style="
+            background-image: ${background};
+          "
+        ></div>
+        <div class="project_container_back_side">
+          <div class="back_side_container">
+            <div class="back_side_container_item">
+              <div class="top_text">
+                <h3 class="title">${projectLogicObj.title}</h3>
+                <p class="techs">${techs}</p>
+              </div>
+            </div>
+            <div class="back_side_container_item">
+              <button class="bottom_button">LEARN MORE</button>
+            </div>
+          </div>
+        </div>
+      </div>`
+
+      fatherDomElement.innerHTML += projectContainer;
+    } 
+
 }
 

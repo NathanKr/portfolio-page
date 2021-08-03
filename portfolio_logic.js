@@ -15,6 +15,6 @@ function Project(
 }
 
 const constants = {
-    PROJECT_CLASS_NAME : 'project',
-    TEXT_ON_BACKGROUND_IMG_PROJECT_CLASS_NAME : 'project_text_animation',
+  PROJECT_CLASS_NAME : 'project',
+  TEXT_ON_BACKGROUND_IMG_PROJECT_CLASS_NAME : 'project_text_animation',
 }

@@ -4,13 +4,13 @@ const projects = [
     "proj1 sub title",
     ["React", "JavaScript"],
     "proj1 description",
-    "proj1_background.png"
+    "white-water-lily-5087465_640.jpg"
   ),
   new Project(
     "proj2",
     "proj2 sub title",
     ["ASP.Net"],
     "proj2 description",
-    "proj2_background.png"
+    "white-water-lily-5087465_640.jpg"
   ),
 ];

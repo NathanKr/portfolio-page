@@ -1,58 +1,101 @@
 :root {
-    --project_width : 390px;
-    --project_height : 300px;
-  }
-
-/* * {
-    margin: 0px;
-    padding: 0px;
+  --transition_period: 0.3s;
+  --purple_color: #e31c6e;
+  --transition_timing_function_value: ease-in-out;
+  --main_background_image_width: 640px;
+  --main_background_image_height: 413px;
 }
 
 body {
-    text-align: center;
-} */
+  font-family: "Raleway", sans-serif;
+}
 
-#projects .project {
-  width: var(--project_width);
-  height: var(--project_height);
+/* *********** first page front and back ***********  */
+
+.project_container {
+  width: var(--main_background_image_width);
+  height: var(--main_background_image_height);
   position: relative;
-  border : 1px solid blue;
+}
+
+.project_container_front_side {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 0;
+}
+
+.project_container_back_side:hover {
+  /* אטימות מלאה ז"א אין בכלל שקיפות */
   opacity: 1;
+  transition: opacity var(--transition_period);
 }
 
-
-/* ********* image animation ************ */
-#projects .project::before {
-    width: var(--project_width);
-    height: var(--project_height);
-    content: "";
-    background : white;
-    position: absolute;
-    z-index: -1;
-    transition: opacity 2s;
-  }
-  
-  #projects .project:hover{
-    opacity: 0;
-  }
-
-  /* #projects .project:hover::before{
-    /* the syntax is not intuitive but it relate to hover over #projects .project::before */
-    z-index: 1;
-    /* opacity: 0; */
-  } */
-
-/* ********* text animation ************ */
-#projects .project:hover .project_text_animation {
-    top: 0;
-    color : rgba(0,0,0,1);
+.project_container_back_side {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: lightblue;
+  z-index: 1;
+  opacity: 0; /*  ללא אטימות ז"א שקיפות מלאה */
 }
 
-.project_text_animation{
-    position: relative;
-    /* make it outside the window */
-    color : rgba(0,0,0,0);
-    top : -20px; 
-    transition: top 0.5s , color 0.5s;
+.back_side_container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  position: relative;
 }
 
+.back_side_container_item {
+  flex: 1;
+  position: relative;
+}
+
+.top_text {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: opacity var(--transition_period), top var(--transition_period);
+  transition-timing-function: val(--transition_timing_function_value);
+}
+
+.top_text .title {
+  text-align: center;
+}
+
+.top_text .techs {
+  color: var(--purple_color);
+}
+
+.bottom_button {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 2px solid var(--purple_color);
+  padding: 7px 25px;
+  transition: opacity var(--transition_period), bottom var(--transition_period);
+  transition-timing-function: val(--transition_timing_function_value);
+  cursor: pointer;
+  font-size: 110%;
+}
+
+.bottom_button:hover {
+  color: white;
+  background: var(--purple_color);
+  transition: var(--transition_period) background;
+}
+
+/* *********** popup ***********  */
+#center-screen-popup {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+}
+
+.project_details_container {
+  display: flex;
+  flex-direction: column;
+}
