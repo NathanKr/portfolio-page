@@ -1,4 +1,4 @@
-function Project(
+function ProjectLogic(
   title,
   subTitle,
   techs,

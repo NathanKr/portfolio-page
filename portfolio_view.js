@@ -3,13 +3,18 @@ function getImageUrl(imageFileName) {
 }
 
 const potfolioView = {
-  fillDetailsDomElement: function (projectLogicObj) {
-    const imagePath = getImageUrl(projectLogicObj.backgroundImgFileName);
-    console.log(imagePath);
+  setCurrentSlideImage: function (projectLogicObj, indexSlider) {
+    console.log(projectLogicObj);
+    const imagePath = getImageUrl(
+      projectLogicObj.imgsSliderFileNames[indexSlider]
+    );
     const backgroundImage = `url('${imagePath}')`;
     document.querySelector(
       "#id_popup_details .project_details_container_top"
     ).style.backgroundImage = backgroundImage;
+  },
+  fillDetailsDomElement: function (projectLogicObj) {
+    this.setCurrentSlideImage(projectLogicObj, 0);
     document.querySelector("#id_popup_details .title").innerText =
       projectLogicObj.title;
     document.querySelector("#id_popup_details .sub_title").innerText =
@@ -46,7 +51,7 @@ const potfolioView = {
               </div>
             </div>
             <div class="back_side_container_item">
-              <button class="bottom_button" ${constants.DATA_INDEX_ATTRIBUE}=${projectLogicObj.index}>LEARN MORE</button>
+              <button class="learn_more_button" ${constants.DATA_INDEX_ATTRIBUE}=${projectLogicObj.index}>LEARN MORE</button>
             </div>
           </div>
         </div>

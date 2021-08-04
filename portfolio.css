@@ -78,7 +78,7 @@ button {
   color: var(--purple_color);
 }
 
-.bottom_button {
+.learn_more_button {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
@@ -89,13 +89,13 @@ button {
   font-size: 110%;
 }
 
-.bottom_button:hover {
+.learn_more_button:hover {
   color: white;
   background: var(--purple_color);
   transition: var(--transition_period) background;
 }
 
-/* *********** popup ***********  */
+/* *********** popup \ details***********  */
 
 .center_screen {
   position: fixed;
@@ -103,6 +103,7 @@ button {
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: -1;
+  background: orange;
 }
 
 .popup {
@@ -118,6 +119,8 @@ button {
 
 .project_details_container_top {
   flex: 6;
+  position: relative;
+  padding: 0 20px;
 }
 
 .project_details_container_bottom {
@@ -129,7 +132,6 @@ button {
 
 .project_details_container_bottom .sub_title {
   border-bottom: 1px solid black;
-  padding-bottom: 10px;
   color: #c0c0c0;
 }
 
@@ -145,4 +147,16 @@ button {
   bottom: 0;
   right: 0;
   margin: 10px;
+}
+
+.button_left {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.button_right {
+  position: absolute;
+  bottom: 0;
+  right: 0;
 }

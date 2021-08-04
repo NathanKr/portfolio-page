@@ -1,17 +1,27 @@
-// ************* mouse enter \ exit **************
+let objCurrentProjectLogic = null;
+let sliderIndex = null;
 
+
+// ************* mouse enter \ exit **************
 function mouseHelper(_this, textTop, textOpacity, buttonBottom, buttonOpacity) {
   const elemTopText = _this.querySelector(".top_text");
   elemTopText.style.top = textTop;
   elemTopText.style.opacity = textOpacity;
 
-  const elemBottomButton = _this.querySelector(".bottom_button");
+  const elemBottomButton = _this.querySelector(".learn_more_button");
   elemBottomButton.style.bottom = buttonBottom;
   elemBottomButton.style.opacity = buttonOpacity;
 }
 
 function mouseEnterHandler() {
   mouseHelper(this, "50%", 1, "50%", 1);
+  const buttonLearnMore = this.querySelector('.learn_more_button');
+  const indexProject = buttonLearnMore.getAttribute(
+    constants.DATA_INDEX_ATTRIBUE
+  );
+  objCurrentProjectLogic = projects[indexProject];
+  console.log(objCurrentProjectLogic);
+  sliderIndex = 0;
 }
 
 function mouseLeaveHandler() {
@@ -41,17 +51,59 @@ function initMouseEnterExit() {
 }
 
 //  ************* details **************
+const elemCenterScreen = document.querySelector(
+  "#id_popup_details .center_screen"
+);
+
+function showDetails() {
+  elemCenterScreen.style.visibility = "visible";
+  elemCenterScreen.style.zIndex = "100";
+}
+
+function hideDetails() {
+  elemCenterScreen.style.visibility = "hidden";
+  elemCenterScreen.style.zIndex = "-1";
+}
+
 function initDetails() {
-  const elemCenterScreen = document.querySelector(
-    "#id_popup_details .center_screen"
+  const buttonMoreInfo = document.querySelector(
+    "#id_popup_details .button_more_info"
   );
+  buttonMoreInfo.onclick = () => {
+    console.log("more info");
+  };
+
+  const buttonLeft = document.querySelector("#id_popup_details .button_left");
+  buttonLeft.onclick = () => {
+    if (sliderIndex === 0){
+      sliderIndex = objCurrentProjectLogic.imgsSliderFileNames.length - 1
+    }
+    else{
+      sliderIndex--;
+    }
+    potfolioView.setCurrentSlideImage(objCurrentProjectLogic,sliderIndex);
+  };
+
+  const buttonRight = document.querySelector("#id_popup_details .button_right");
+  buttonRight.onclick = () => {
+    console.log(objCurrentProjectLogic);
+    if ((sliderIndex+1) === objCurrentProjectLogic.imgsSliderFileNames.length){
+      sliderIndex = 0
+    }
+    else{
+      sliderIndex++;
+    }
+    potfolioView.setCurrentSlideImage(objCurrentProjectLogic,sliderIndex);
+  };
+
   const buttonClose = document.querySelector("#id_popup_details .button_close");
+  hideDetails();
   buttonClose.onclick = () => {
-    elemCenterScreen.style.zIndex = "-1";
+    hideDetails();
   };
 
   const listLearnMoreButton = document.querySelectorAll(
-    ".project_container_back_side .bottom_button"
+    ".project_container_back_side .learn_more_button"
   );
 
   listLearnMoreButton.forEach((elemLearnMoreButton) => {
@@ -61,12 +113,12 @@ function initDetails() {
 
     elemLearnMoreButton.onclick = () => {
       const objProject = projects[index];
-      elemCenterScreen.style.zIndex = "100";
+      showDetails();
       potfolioView.fillDetailsDomElement(objProject);
     };
   });
 }
 
-// main
+// ************* main **************
 initMouseEnterExit();
 initDetails();
