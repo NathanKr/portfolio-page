@@ -20,7 +20,6 @@ function mouseEnterHandler() {
     constants.DATA_INDEX_ATTRIBUE
   );
   objCurrentProjectLogic = projects[indexProject];
-  console.log(objCurrentProjectLogic);
   sliderIndex = 0;
 }
 
@@ -66,13 +65,6 @@ function hideDetails() {
 }
 
 function initDetails() {
-  const buttonMoreInfo = document.querySelector(
-    "#id_popup_details .button_more_info"
-  );
-  buttonMoreInfo.onclick = () => {
-    console.log("more info");
-  };
-
   const buttonLeft = document.querySelector("#id_popup_details .button_left");
   buttonLeft.onclick = () => {
     if (sliderIndex === 0){

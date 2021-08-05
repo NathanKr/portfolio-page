@@ -1,3 +1,8 @@
+function MoreInfo(url,show){
+  this.url = url;
+  this.show = show;
+}
+
 function ProjectLogic(
   title,
   subTitle,
@@ -5,7 +10,8 @@ function ProjectLogic(
   description,
   backgroundImgFileName,
   imgsSliderFileNames,
-  index
+  index,
+  moreInfo
 ) {
   this.title = title;
   this.subTitle = subTitle;
@@ -14,6 +20,7 @@ function ProjectLogic(
   this.backgroundImgFileName = backgroundImgFileName;
   this.imgsSliderFileNames = imgsSliderFileNames;
   this.index = index;
+  this.moreInfo = moreInfo
 }
 
 const constants = {

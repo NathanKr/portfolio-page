@@ -14,6 +14,10 @@ button {
   cursor: pointer;
 }
 
+#projects_header {
+  font-family: raleway-bold;
+  text-align: center;
+}
 /* *********** first page front and back ***********  */
 
 #projects {
@@ -26,6 +30,7 @@ button {
   width: var(--main_background_image_width);
   height: var(--main_background_image_height);
   position: relative;
+  margin: 20px;
 }
 
 .project_container_front_side {
@@ -135,7 +140,7 @@ button {
   color: #c0c0c0;
 }
 
-.project_details_container_bottom .button_more_info {
+.project_details_container_bottom .more_info {
   position: absolute;
   bottom: 0;
   margin-bottom: 10px;
@@ -159,4 +164,13 @@ button {
   position: absolute;
   bottom: 0;
   right: 0;
+}
+
+.arrow {
+  background: grey;
+  color: white;
+  font-weight: bolder;
+  font-size: 120%;
+  padding: 10px 20px;
+  opacity: 0.8;
 }

@@ -13,6 +13,7 @@ const potfolioView = {
       "#id_popup_details .project_details_container_top"
     ).style.backgroundImage = backgroundImage;
   },
+
   fillDetailsDomElement: function (projectLogicObj) {
     this.setCurrentSlideImage(projectLogicObj, 0);
     document.querySelector("#id_popup_details .title").innerText =
@@ -21,7 +22,15 @@ const potfolioView = {
       projectLogicObj.subTitle;
     document.querySelector("#id_popup_details .description").innerText =
       projectLogicObj.description;
+    
+      const elemMoreInfo = document.querySelector("#id_popup_details .more_info");
+    if (projectLogicObj.moreInfo.show) {
+      elemMoreInfo.href = projectLogicObj.moreInfo.url;
+    } else {
+      elemMoreInfo.style.display = "none";
+    }
   },
+
   createNewProjectDomElement: function (fatherDomElement, projectLogicObj) {
     const imagePath = getImageUrl(projectLogicObj.backgroundImgFileName);
     const background = `url('${imagePath}')`;
