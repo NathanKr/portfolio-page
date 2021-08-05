@@ -33,7 +33,7 @@ function resetState() {
 }
 
 function initMouseEnterExit() {
-  const projectsRootElem = document.getElementById("projects");
+  const projectsRootElem = document.getElementById("id_projects");
   for (let index = 0; index < projects.length; index++) {
     const project = projects[index];
     potfolioView.createNewProjectDomElement(projectsRootElem, project);

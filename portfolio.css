@@ -2,8 +2,8 @@
   --transition_period: 0.3s;
   --purple_color: #e31c6e;
   --transition_timing_function_value: ease-in-out;
-  --main_background_image_width: 640px;
-  --main_background_image_height: 413px;
+  --main_background_image_width: 500px;
+  --main_background_image_height: 350px;
 }
 
 body {
@@ -20,10 +20,8 @@ button {
 }
 /* *********** first page front and back ***********  */
 
-#projects {
+#id_projects {
   position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
 }
 
 .project_container {
@@ -31,6 +29,7 @@ button {
   height: var(--main_background_image_height);
   position: relative;
   margin: 20px;
+  display: inline-block;
 }
 
 .project_container_front_side {
@@ -172,5 +171,6 @@ button {
   font-weight: bolder;
   font-size: 120%;
   padding: 10px 20px;
-  opacity: 0.8;
+  opacity: 0.6;
+  cursor: pointer;
 }
