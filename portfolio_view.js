@@ -4,7 +4,6 @@ function getImageUrl(imageFileName) {
 
 const potfolioView = {
   setCurrentSlideImage: function (projectLogicObj, indexSlider) {
-    console.log(projectLogicObj);
     const imagePath = getImageUrl(
       projectLogicObj.imgsSliderFileNames[indexSlider]
     );
@@ -22,11 +21,13 @@ const potfolioView = {
       projectLogicObj.subTitle;
     document.querySelector("#id_popup_details .description").innerText =
       projectLogicObj.description;
-    
-      const elemMoreInfo = document.querySelector("#id_popup_details .more_info");
-    if (projectLogicObj.moreInfo.show) {
-      elemMoreInfo.href = projectLogicObj.moreInfo.url;
-    } else {
+
+    const elemMoreInfo = document.querySelector("#id_popup_details .view_site");
+    const elemMoreInfoUrl = document.querySelector(
+      "#id_popup_details .view_site > a"
+    );
+    elemMoreInfoUrl.href = projectLogicObj.moreInfo.url;
+    if (!projectLogicObj.moreInfo.show) {
       elemMoreInfo.style.display = "none";
     }
   },

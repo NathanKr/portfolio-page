@@ -1,7 +1,6 @@
 let objCurrentProjectLogic = null;
 let sliderIndex = null;
 
-
 // ************* mouse enter \ exit **************
 function mouseHelper(_this, textTop, textOpacity, buttonBottom, buttonOpacity) {
   const elemTopText = _this.querySelector(".top_text");
@@ -15,7 +14,7 @@ function mouseHelper(_this, textTop, textOpacity, buttonBottom, buttonOpacity) {
 
 function mouseEnterHandler() {
   mouseHelper(this, "50%", 1, "50%", 1);
-  const buttonLearnMore = this.querySelector('.learn_more_button');
+  const buttonLearnMore = this.querySelector(".learn_more_button");
   const indexProject = buttonLearnMore.getAttribute(
     constants.DATA_INDEX_ATTRIBUE
   );
@@ -65,30 +64,32 @@ function hideDetails() {
 }
 
 function initDetails() {
-  const buttonLeft = document.querySelector("#id_popup_details .button_left");
+  const buttonLeft = document.querySelector(
+    "#id_popup_details .button_left.iconify.arrow"
+  );
   buttonLeft.onclick = () => {
-    if (sliderIndex === 0){
-      sliderIndex = objCurrentProjectLogic.imgsSliderFileNames.length - 1
-    }
-    else{
+    if (sliderIndex === 0) {
+      sliderIndex = objCurrentProjectLogic.imgsSliderFileNames.length - 1;
+    } else {
       sliderIndex--;
     }
-    potfolioView.setCurrentSlideImage(objCurrentProjectLogic,sliderIndex);
+    potfolioView.setCurrentSlideImage(objCurrentProjectLogic, sliderIndex);
   };
 
-  const buttonRight = document.querySelector("#id_popup_details .button_right");
+  const buttonRight = document.querySelector(
+    "#id_popup_details .button_right.iconify.arrow"
+  );
   buttonRight.onclick = () => {
     console.log(objCurrentProjectLogic);
-    if ((sliderIndex+1) === objCurrentProjectLogic.imgsSliderFileNames.length){
-      sliderIndex = 0
-    }
-    else{
+    if (sliderIndex + 1 === objCurrentProjectLogic.imgsSliderFileNames.length) {
+      sliderIndex = 0;
+    } else {
       sliderIndex++;
     }
-    potfolioView.setCurrentSlideImage(objCurrentProjectLogic,sliderIndex);
+    potfolioView.setCurrentSlideImage(objCurrentProjectLogic, sliderIndex);
   };
 
-  const buttonClose = document.querySelector("#id_popup_details .button_close");
+  const buttonClose = document.querySelector("#id_popup_details .button_close.iconify");
   hideDetails();
   buttonClose.onclick = () => {
     hideDetails();

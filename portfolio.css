@@ -22,14 +22,16 @@ button {
 
 #id_projects {
   position: absolute;
+  width: 100%;
+  text-align: center;
 }
 
 .project_container {
   width: var(--main_background_image_width);
   height: var(--main_background_image_height);
   position: relative;
-  margin: 20px;
   display: inline-block;
+  margin: 15px;
 }
 
 .project_container_front_side {
@@ -111,8 +113,8 @@ button {
 }
 
 .popup {
-  width: 60%;
-  height: 95vh;
+  width: 700px;
+  height: 98vh;
   background: white;
 }
 
@@ -139,18 +141,43 @@ button {
   color: #c0c0c0;
 }
 
-.project_details_container_bottom .more_info {
+.project_details_container_bottom .view_site {
   position: absolute;
   bottom: 0;
   margin-bottom: 10px;
+  cursor: pointer;
+  background: var(--purple_color);
+  color: white;
+  padding: 10px 30px;
+  font-weight: 600;
 }
 
+.project_details_container_bottom .view_site a {
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+}
+
+.project_details_container_bottom .view_site:hover {
+  background: white;
+  color: var(--purple_color);
+}
+
+  /* .project_details_container_bottom .view_site a:hover {
+    background: white;
+    color: var(--purple_color);
+  } */
+
 .project_details_container_bottom .button_close {
-  border: none;
+  /* border: none; */
   position: absolute;
   bottom: 0;
   right: 0;
   margin: 10px;
+  cursor: pointer;
+  color: #bbb;
+  font-size: 28px;
+  font-weight: bolder;
 }
 
 .button_left {
@@ -166,11 +193,11 @@ button {
 }
 
 .arrow {
+  font-size: 40px;
+  font-weight: bold;
   background: grey;
   color: white;
-  font-weight: bolder;
-  font-size: 120%;
-  padding: 10px 20px;
-  opacity: 0.6;
+  padding: 10px 15px;
+  opacity: 0.7;
   cursor: pointer;
 }
