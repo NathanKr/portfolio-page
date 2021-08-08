@@ -150,12 +150,19 @@ button {
   color: white;
   padding: 10px 30px;
   font-weight: 600;
+  /* transition: all 0.5s; */
+}
+
+.project_details_container_bottom .view_site svg {
+  position: relative;
+  top: 3px;
 }
 
 .project_details_container_bottom .view_site a {
   text-decoration: none;
   color: white;
   font-weight: 600;
+  /* transition: all 0.5s; */
 }
 
 .project_details_container_bottom .view_site:hover {
@@ -163,10 +170,10 @@ button {
   color: var(--purple_color);
 }
 
-  /* .project_details_container_bottom .view_site a:hover {
-    background: white;
-    color: var(--purple_color);
-  } */
+.project_details_container_bottom .view_site:hover a {
+  background: white;
+  color: var(--purple_color);
+}
 
 .project_details_container_bottom .button_close {
   /* border: none; */

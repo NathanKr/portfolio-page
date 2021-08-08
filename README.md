@@ -16,3 +16,11 @@ I like the portfolio page <a href='http://findmatthew.com/'>here</a> so i am tak
 <ul>
 <li>In general projects_storage.js should be projects_storage.json but there was a problem reading the file using fetch. This problem can be fixed with proper development server as with react but i prefered in this small project to simply use js file</li>
 </ul>
+
+
+<h2>Todo</h2>
+<ul>
+<li>tranisition on view_site is not smooth so remarked</li>
+<li>center vertically svg in view_state not using rop 3px. use robust approach</li>
+
+</ul>

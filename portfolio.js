@@ -49,51 +49,52 @@ function initMouseEnterExit() {
 }
 
 //  ************* details **************
-const elemCenterScreen = document.querySelector(
-  "#id_popup_details .center_screen"
-);
 
 function showDetails() {
-  elemCenterScreen.style.visibility = "visible";
-  elemCenterScreen.style.zIndex = "100";
+  potfolioView.getElemCenterScreen().style.visibility = "visible";
+  potfolioView.getElemCenterScreen().style.zIndex = "100";
 }
 
+/**
+ * hideDetails is used with onclick on the html because iconify might not be ready
+ */
 function hideDetails() {
-  elemCenterScreen.style.visibility = "hidden";
-  elemCenterScreen.style.zIndex = "-1";
+  potfolioView.getElemCenterScreen().style.visibility = "hidden";
+  potfolioView.getElemCenterScreen().style.zIndex = "-1";
+}
+
+function closeHandler() {
+  hideDetails();
+}
+
+/**
+ * slideLeftHandler is used with onclick on the html because iconify might not be ready
+ */
+function slideLeftHandler() {
+  if (sliderIndex === 0) {
+    sliderIndex = objCurrentProjectLogic.imgsSliderFileNames.length - 1;
+  } else {
+    sliderIndex--;
+  }
+  potfolioView.setCurrentSlideImage(objCurrentProjectLogic, sliderIndex);
+}
+
+/**
+ * slideRightHandler is used with onclick on the html because iconify might not be ready
+ */
+ function slideRightHandler() {
+  console.log(objCurrentProjectLogic);
+  if (sliderIndex + 1 === objCurrentProjectLogic.imgsSliderFileNames.length) {
+    sliderIndex = 0;
+  } else {
+    sliderIndex++;
+  }
+  potfolioView.setCurrentSlideImage(objCurrentProjectLogic, sliderIndex);
 }
 
 function initDetails() {
-  const buttonLeft = document.querySelector(
-    "#id_popup_details .button_left.iconify.arrow"
-  );
-  buttonLeft.onclick = () => {
-    if (sliderIndex === 0) {
-      sliderIndex = objCurrentProjectLogic.imgsSliderFileNames.length - 1;
-    } else {
-      sliderIndex--;
-    }
-    potfolioView.setCurrentSlideImage(objCurrentProjectLogic, sliderIndex);
-  };
-
-  const buttonRight = document.querySelector(
-    "#id_popup_details .button_right.iconify.arrow"
-  );
-  buttonRight.onclick = () => {
-    console.log(objCurrentProjectLogic);
-    if (sliderIndex + 1 === objCurrentProjectLogic.imgsSliderFileNames.length) {
-      sliderIndex = 0;
-    } else {
-      sliderIndex++;
-    }
-    potfolioView.setCurrentSlideImage(objCurrentProjectLogic, sliderIndex);
-  };
-
-  const buttonClose = document.querySelector("#id_popup_details .button_close.iconify");
+  // hideDetails is also th click handler of button_close
   hideDetails();
-  buttonClose.onclick = () => {
-    hideDetails();
-  };
 
   const listLearnMoreButton = document.querySelectorAll(
     ".project_container_back_side .learn_more_button"
@@ -112,6 +113,12 @@ function initDetails() {
   });
 }
 
+function initPopupDetails() {
+  fatherDomElement = document.getElementById("id_popup_details");
+  potfolioView.createPopupDetails(fatherDomElement);
+}
+
 // ************* main **************
+initPopupDetails();
 initMouseEnterExit();
 initDetails();

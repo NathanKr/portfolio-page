@@ -3,6 +3,35 @@ function getImageUrl(imageFileName) {
 }
 
 const potfolioView = {
+  getElemCenterScreen: function () {
+    return document.querySelector("#id_popup_details .center_screen");
+  },
+  createPopupDetails: function (fatherDomElement) {
+    fatherDomElement.innerHTML += `<div
+      class="center_screen popup project_details_container"
+      style="background: white"
+    >
+      <div class="project_details_container_top">
+        <i onclick='slideLeftHandler()' class="button_left iconify arrow" data-icon="mdi:chevron-left"></i>
+        <i onclick='slideRightHandler()'
+          class="button_right iconify arrow"
+          data-icon="mdi:chevron-right"
+        ></i>
+      </div>
+      <div class="project_details_container_bottom">
+        <h2 class="title"></h2>
+        <h4 class="sub_title"></h4>
+        <p class="description"></p>
+        <div class="view_site">
+          <span class="iconify" data-icon="mdi:open-in-new"></span>
+          <a href="" target="_blank">View Site</a>
+        </div>
+        <span class="button_close iconify" onclick='closeHandler()' data-icon="mdi:close"></span>
+      </div>
+    </div>
+`;
+  },
+
   setCurrentSlideImage: function (projectLogicObj, indexSlider) {
     const imagePath = getImageUrl(
       projectLogicObj.imgsSliderFileNames[indexSlider]
@@ -27,9 +56,9 @@ const potfolioView = {
       "#id_popup_details .view_site > a"
     );
     elemMoreInfoUrl.href = projectLogicObj.moreInfo.url;
-    if (!projectLogicObj.moreInfo.show) {
-      elemMoreInfo.style.display = "none";
-    }
+    elemMoreInfo.style.display = projectLogicObj.moreInfo.show
+      ? "block"
+      : "none";
   },
 
   createNewProjectDomElement: function (fatherDomElement, projectLogicObj) {
