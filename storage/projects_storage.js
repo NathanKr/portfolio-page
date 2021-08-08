@@ -7,7 +7,7 @@ const projects = [
     "white-water-lily-5087465_640.jpg",
     ["slide1.png" , "slide2.png"],
     0,
-    new MoreInfo('https://www.ynet.co.il/home/0,7340,L-8,00.html',true)
+    new MoreInfo('https://www.ynet.co.il/home/0,7340,L-8,00.html',true,constants.modeSite)
   ),
   new ProjectLogic(
     "proj2",
@@ -17,6 +17,6 @@ const projects = [
     "white-water-lily-5087465_640.jpg",
     ["slide1.png"],
     1,
-    new MoreInfo('www.google.com',false)
+    new MoreInfo('https://www.youtube.com/watch?v=_vRacVqNdTI',true,constants.modeVideo)
   ),
 ];

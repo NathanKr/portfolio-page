@@ -1,6 +1,7 @@
-function MoreInfo(url,show){
+function MoreInfo(url,show,mode){
   this.url = url;
   this.show = show;
+  this.mode = mode; //video or site
 }
 
 function ProjectLogic(
@@ -23,6 +24,3 @@ function ProjectLogic(
   this.moreInfo = moreInfo
 }
 
-const constants = {
-  DATA_INDEX_ATTRIBUE : 'data-index'
-}

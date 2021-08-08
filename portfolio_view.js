@@ -2,6 +2,24 @@ function getImageUrl(imageFileName) {
   return `images/${imageFileName}`;
 }
 
+const getViewText = (projectLogicObj) => {
+  let viewText;
+  switch (projectLogicObj.moreInfo.mode) {
+    case constants.modeSite:
+      viewText = "View Site";
+      break;
+
+    case constants.modeVideo:
+      viewText = "View Video";
+      break;
+
+    default:
+      console.log(`Error : unexpected mode ${projectLogicObj.moreInfo.mode}`);
+  }
+
+  return viewText;
+};
+
 const potfolioView = {
   getElemCenterScreen: function () {
     return document.querySelector("#id_popup_details .center_screen");
@@ -24,7 +42,7 @@ const potfolioView = {
         <p class="description"></p>
         <div class="view_site">
           <span class="iconify" data-icon="mdi:open-in-new"></span>
-          <a href="" target="_blank">View Site</a>
+          <a href="" target="_blank"></a>
         </div>
         <span class="button_close iconify" onclick='closeHandler()' data-icon="mdi:close"></span>
       </div>
@@ -43,22 +61,22 @@ const potfolioView = {
   },
 
   fillDetailsDomElement: function (projectLogicObj) {
+    const elemIdPopupDetails = document.getElementById("id_popup_details");
     this.setCurrentSlideImage(projectLogicObj, 0);
-    document.querySelector("#id_popup_details .title").innerText =
+    elemIdPopupDetails.querySelector(".title").innerText =
       projectLogicObj.title;
-    document.querySelector("#id_popup_details .sub_title").innerText =
+    elemIdPopupDetails.querySelector(".sub_title").innerText =
       projectLogicObj.subTitle;
-    document.querySelector("#id_popup_details .description").innerText =
+    elemIdPopupDetails.querySelector(".description").innerText =
       projectLogicObj.description;
 
-    const elemMoreInfo = document.querySelector("#id_popup_details .view_site");
-    const elemMoreInfoUrl = document.querySelector(
-      "#id_popup_details .view_site > a"
-    );
+    const elemMoreInfo = elemIdPopupDetails.querySelector(".view_site");
+    const elemMoreInfoUrl = elemIdPopupDetails.querySelector(".view_site > a");
     elemMoreInfoUrl.href = projectLogicObj.moreInfo.url;
     elemMoreInfo.style.display = projectLogicObj.moreInfo.show
       ? "block"
       : "none";
+    elemMoreInfoUrl.innerText = getViewText(projectLogicObj);  
   },
 
   createNewProjectDomElement: function (fatherDomElement, projectLogicObj) {
