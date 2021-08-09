@@ -5,11 +5,11 @@ function getImageUrl(imageFileName) {
 const getViewText = (projectLogicObj) => {
   let viewText;
   switch (projectLogicObj.moreInfo.mode) {
-    case constants.modeSite:
+    case constants.MODE_SITE:
       viewText = "View Site";
       break;
 
-    case constants.modeVideo:
+    case constants.MODE_VIDEO:
       viewText = "View Video";
       break;
 
@@ -47,7 +47,7 @@ const potfolioView = {
           <span class="iconify" data-icon="mdi:open-in-new"></span>
           <a href="" target="_blank"></a>
         </div>
-        <span class="button_close iconify" onclick='closeHandler()' data-icon="mdi:close"></span>
+        <span class="button_close button iconify" onclick='closeHandler()' data-icon="mdi:close"></span>
       </div>
     </div>
 `;

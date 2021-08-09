@@ -1,4 +1,5 @@
-const projectsOwner = 'Nathan Krasney';
+const projectsOwner = "Nathan Krasney";
+const techCategories = [constants.MENU_ITEM_ALL, "React", "ASP.net"];
 const projects = [
   new ProjectLogic(
     "proj1",
@@ -6,9 +7,13 @@ const projects = [
     ["React", "JavaScript"],
     "proj1 description",
     "white-water-lily-5087465_640.jpg",
-    ["slide1.png" , "slide2.png"],
+    ["slide1.png", "slide2.png"],
     0,
-    new MoreInfo('https://www.ynet.co.il/home/0,7340,L-8,00.html',true,constants.modeSite)
+    new MoreInfo(
+      "https://www.ynet.co.il/home/0,7340,L-8,00.html",
+      true,
+      constants.MODE_SITE
+    )
   ),
   new ProjectLogic(
     "proj2",
@@ -18,6 +23,10 @@ const projects = [
     "white-water-lily-5087465_640.jpg",
     ["slide1.png"],
     1,
-    new MoreInfo('https://www.youtube.com/watch?v=_vRacVqNdTI',true,constants.modeVideo)
+    new MoreInfo(
+      "https://www.youtube.com/watch?v=_vRacVqNdTI",
+      true,
+      constants.MODE_VIDEO
+    )
   ),
 ];

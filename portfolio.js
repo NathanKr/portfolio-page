@@ -1,5 +1,6 @@
 let objCurrentProjectLogic = null;
 let sliderIndex = null;
+let elemCurrentMenuItem = null;
 
 // ************* mouse enter \ exit **************
 function mouseHelper(_this, textTop, textOpacity, buttonBottom, buttonOpacity) {
@@ -82,8 +83,7 @@ function slideLeftHandler() {
 /**
  * slideRightHandler is used with onclick on the html because iconify might not be ready
  */
- function slideRightHandler() {
-  console.log(objCurrentProjectLogic);
+function slideRightHandler() {
   if (sliderIndex + 1 === objCurrentProjectLogic.imgsSliderFileNames.length) {
     sliderIndex = 0;
   } else {
@@ -118,8 +118,47 @@ function initPopupDetails() {
   potfolioView.createPopupDetails(fatherDomElement);
 }
 
+const menuItemClickHandler = (elemNewSelectedMenuItem) => {
+  // remove selected from prev and add default
+  removeClassFromCurrentMenuItem(constants.CLASS_MENU_BUTTON_ACTIVE_COLORS);
+  addClassToCurrentMenuItem(constants.CLASS_MENU_BUTTON_DEFAULT_COLORS);
+
+  // set current to new
+  elemCurrentMenuItem = elemNewSelectedMenuItem;
+
+  // remove default from new selected and add selected
+  removeClassFromCurrentMenuItem(constants.CLASS_MENU_BUTTON_DEFAULT_COLORS);
+  addClassToCurrentMenuItem(constants.CLASS_MENU_BUTTON_ACTIVE_COLORS);
+};
+
+function addClassToCurrentMenuItem(nameClass) {
+  elemCurrentMenuItem.className += ` ${nameClass}`;
+}
+
+function removeClassFromCurrentMenuItem(nameClass) {
+  elemCurrentMenuItem.className = elemCurrentMenuItem.className.replace(
+    nameClass,
+    ""
+  );
+}
+
+function initMenu() {
+  fatherDomElement = document.getElementById("menu");
+  techCategories.forEach((category) => {
+    fatherDomElement.innerHTML += ` <button onclick='menuItemClickHandler(this)' 
+      class='button menu_button 
+      ${
+        constants.CLASS_MENU_BUTTON_DEFAULT_COLORS
+      }'>${category.toUpperCase()}</button>`;
+  });
+  elemCurrentMenuItem = fatherDomElement.querySelector(".menu_button");
+  removeClassFromCurrentMenuItem(constants.CLASS_MENU_BUTTON_DEFAULT_COLORS);
+  addClassToCurrentMenuItem(constants.CLASS_MENU_BUTTON_ACTIVE_COLORS);
+}
+
 // ************* main **************
 document.title = projectsOwner;
+initMenu();
 initPopupDetails();
 initMouseEnterExit();
 initDetails();

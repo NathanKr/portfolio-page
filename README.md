@@ -18,9 +18,9 @@ I like the portfolio page <a href='http://findmatthew.com/'>here</a> so i am tak
 </ul>
 
 
-<h2>Todo</h2>
+<h2>Todos</h2>
 <ul>
 <li>tranisition on view_site is not smooth so remarked</li>
 <li>center vertically svg in view_state not using top 3px. use robust approach</li>
-<li>consider using iconify on locally so no network issues and onclick from html may be removed and used from javascript's onclick</li>
+<li>projects underline is not as in the reference project </li>
 </ul>

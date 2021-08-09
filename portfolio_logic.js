@@ -1,3 +1,4 @@
+
 function MoreInfo(url,show,mode){
   this.url = url;
   this.show = show;

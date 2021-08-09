@@ -6,28 +6,39 @@
   --transition_timing_function_value: ease-in-out;
   --main_project_background_image_width: 500px;
   --main_project_background_image_height: 350px;
+  --body_background_color : #f5f5f5;
   --popup_width: 700px;
-  --popup_height: 98vh
+  --popup_height: 98vh;
 }
 
 body {
   font-family: "Raleway", sans-serif;
+  text-align: center;
+  background-color: var(--body_background_color)
 }
 
-button {
+.button {
   cursor: pointer;
 }
 
 #projects_header {
   font-family: raleway-bold;
-  text-align: center;
+  display: inline-block;
+  padding: 5px;
+  margin: 60px 0;
+  border-bottom: 2px solid black;
+  font-size: 40px;
+  color : #444649;
 }
 /* *********** first page front and back ***********  */
 
 #id_projects {
   position: absolute;
-  width: 100%;
+  width: 94%;
   text-align: center;
+  background-color: white;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .project_container {
@@ -55,13 +66,14 @@ button {
   width: 100%;
   height: 100%;
   position: absolute;
-  background-color: lightblue;
+  background-color: var(--body_background_color);
+  border: 1px solid black;;
   z-index: 1;
   opacity: 0; /*  ללא אטימות ז"א שקיפות מלאה */
 }
 
 .back_side_container {
-  display: flex;
+  display: flex;  
   flex-direction: column;
   height: 100%;
   position: relative;
@@ -101,8 +113,8 @@ button {
 
 .learn_more_button:hover {
   color: white;
-  background: var(--purple_color);
-  transition: var(--transition_period) background;
+  background-color: var(--purple_color);
+  transition: var(--transition_period) background-color;
 }
 
 /* *********** popup \ details***********  */
@@ -113,13 +125,12 @@ button {
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: -1;
-  background: orange;
 }
 
 .popup {
   width: var(--popup_width);
   height: var(--popup_height);
-  background: white;
+  background-color: white;
 }
 
 .project_details_container {
@@ -150,7 +161,7 @@ button {
   bottom: 0;
   margin-bottom: 10px;
   cursor: pointer;
-  background: var(--purple_color);
+  background-color: var(--purple_color);
   color: white;
   padding: 10px 30px;
   font-weight: 600;
@@ -170,12 +181,12 @@ button {
 }
 
 .project_details_container_bottom .view_site:hover {
-  background: white;
+  background-color: white;
   color: var(--purple_color);
 }
 
 .project_details_container_bottom .view_site:hover a {
-  background: white;
+  background-color: white;
   color: var(--purple_color);
 }
 
@@ -184,7 +195,6 @@ button {
   bottom: 0;
   right: 0;
   margin: 10px;
-  cursor: pointer;
   color: #bbb;
   font-size: 28px;
   font-weight: bolder;
@@ -205,14 +215,38 @@ button {
 .arrow {
   font-size: 40px;
   font-weight: bold;
-  background: grey;
+  background-color: grey;
   color: white;
   padding: 10px 15px;
   opacity: 0.7;
   cursor: pointer;
 }
 
-/* responsive */
+/* *********** menu ***********  */
+#menu {
+  margin: 10px;
+}
+
+.menu_button {
+  margin: 0 30px;
+  padding: 7px 30px;
+  font-weight: 600;
+  font-size: 16px;
+  border: none;
+  transition: background-color 2s;
+}
+
+.menu_button_default_colors {
+  color: #616161;
+  background-color: transparent;
+}
+
+.menu_button_active_colors {
+  color: white;
+  background-color: var(--purple_color);
+}
+
+/* *********** responsive ***********  */
 /* var is not working because media query is not part of root */
 @media only screen and (max-width: 500px) {
   .project_container {
@@ -225,4 +259,3 @@ button {
     width: 100%;
   }
 }
-
