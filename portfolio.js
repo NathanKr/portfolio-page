@@ -119,6 +119,7 @@ function initPopupDetails() {
 }
 
 // ************* main **************
+document.title = projectsOwner;
 initPopupDetails();
 initMouseEnterExit();
 initDetails();

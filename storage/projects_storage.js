@@ -1,3 +1,4 @@
+const projectsOwner = 'Nathan Krasney';
 const projects = [
   new ProjectLogic(
     "proj1",

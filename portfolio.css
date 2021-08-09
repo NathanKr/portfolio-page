@@ -1,9 +1,13 @@
+/* General */
+
 :root {
   --transition_period: 0.3s;
   --purple_color: #e31c6e;
   --transition_timing_function_value: ease-in-out;
-  --main_background_image_width: 500px;
-  --main_background_image_height: 350px;
+  --main_project_background_image_width: 500px;
+  --main_project_background_image_height: 350px;
+  --popup_width: 700px;
+  --popup_height: 98vh
 }
 
 body {
@@ -27,8 +31,8 @@ button {
 }
 
 .project_container {
-  width: var(--main_background_image_width);
-  height: var(--main_background_image_height);
+  width: var(--main_project_background_image_width);
+  height: var(--main_project_background_image_height);
   position: relative;
   display: inline-block;
   margin: 15px;
@@ -113,8 +117,8 @@ button {
 }
 
 .popup {
-  width: 700px;
-  height: 98vh;
+  width: var(--popup_width);
+  height: var(--popup_height);
   background: white;
 }
 
@@ -176,7 +180,6 @@ button {
 }
 
 .project_details_container_bottom .button_close {
-  /* border: none; */
   position: absolute;
   bottom: 0;
   right: 0;
@@ -207,5 +210,19 @@ button {
   padding: 10px 15px;
   opacity: 0.7;
   cursor: pointer;
+}
+
+/* responsive */
+/* var is not working because media query is not part of root */
+@media only screen and (max-width: 500px) {
+  .project_container {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .popup {
+    width: 100%;
+  }
 }
 
