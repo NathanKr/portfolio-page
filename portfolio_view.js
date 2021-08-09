@@ -30,12 +30,13 @@ const potfolioView = {
       style="background: white"
     >
       <div class="project_details_container_top">
-        <i onclick='slideLeftHandler()' 
-         style="background: url('./icons/chevron-left-48.png');" 
-         class="button_left icon arrow"></i>
+      <i onclick='slideLeftHandler()' 
+        class="button_left iconify arrow" 
+        data-icon="mdi:chevron-left">
+      </i>
         <i onclick='slideRightHandler()'
-          style="background: url('./icons/chevron-right-48.png');"
-          class="button_right icon arrow"
+        class="button_right iconify arrow"
+        data-icon="mdi:chevron-right"
         ></i>
       </div>
       <div class="project_details_container_bottom">
@@ -43,7 +44,7 @@ const potfolioView = {
         <h4 class="sub_title"></h4>
         <p class="description"></p>
         <div class="view_site">
-          <i class="icon" style="background: url('./icons/open-in-new-48.png');"></i>
+          <span class="iconify" data-icon="mdi:open-in-new"></span>
           <a href="" target="_blank"></a>
         </div>
         <span class="button_close iconify" onclick='closeHandler()' data-icon="mdi:close"></span>
