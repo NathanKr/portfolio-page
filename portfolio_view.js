@@ -118,5 +118,6 @@ const potfolioView = {
       </div>`;
 
     fatherDomElement.innerHTML += projectContainer;
+    return fatherDomElement.lastChild; // return the created projectContainer
   },
 };

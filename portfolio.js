@@ -1,6 +1,8 @@
 let objCurrentProjectLogic = null;
 let sliderIndex = null;
 let elemCurrentMenuItem = null;
+let mapProjectTitleToProjectDomObject = new Map();
+
 
 // ************* mouse enter \ exit **************
 function mouseHelper(_this, textTop, textOpacity, buttonBottom, buttonOpacity) {
@@ -36,7 +38,8 @@ function initMouseEnterExit() {
   const projectsRootElem = document.getElementById("id_projects");
   for (let index = 0; index < projects.length; index++) {
     const project = projects[index];
-    potfolioView.createNewProjectDomElement(projectsRootElem, project);
+    const projectDomObject = potfolioView.createNewProjectDomElement(projectsRootElem, project);
+    mapProjectTitleToProjectDomObject.set(project.title,projectDomObject)
   }
 
   const nodeList = document.querySelectorAll(".project_container_back_side");
@@ -48,6 +51,8 @@ function initMouseEnterExit() {
     objProject.addEventListener("mouseleave", mouseLeaveHandler);
   }
 }
+
+
 
 //  ************* details **************
 
@@ -142,6 +147,33 @@ function removeClassFromCurrentMenuItem(nameClass) {
   );
 }
 
+//  ************* menu **************
+/**
+ * getProjectTitlesFromTech
+ * 
+ * @param {*} desiredTechName  : e.g. All or ASP.Net
+ * 
+ */
+function getProjectTitlesFromTech(desiredTechName) {
+  if(desiredTechName === constants.MENU_ITEM_ALL){
+    return projects.map(projectLogic => projectLogic.title);
+  }
+
+  const desiredTechNameLowerCase = desiredTechName.toLowerCase();
+
+  // --- filter projects by desiredTechNameLowerCase
+  const matchedProjects = projects.filter((projectLogic) => {
+    const projectTechsLowerCase = projectLogic.techs.map((techName) =>
+      techName.toLowerCase()
+    );
+    return projectTechsLowerCase.includes(desiredTechNameLowerCase);
+  });
+
+  // --- map
+  return matchedProjects.map((projectLogic) => projectLogic.title);
+}
+
+
 function initMenu() {
   fatherDomElement = document.getElementById("menu");
   techCategories.forEach((category) => {
@@ -158,6 +190,7 @@ function initMenu() {
 
 // ************* main **************
 document.title = projectsOwner;
+
 initMenu();
 initPopupDetails();
 initMouseEnterExit();
