@@ -53,7 +53,7 @@ function mouseHelper(_this, textTop, textOpacity, buttonBottom, buttonOpacity) {
 }
 
 function mouseEnterHandler() {
-  mouseHelper(this, "50%", 1, "50%", 1);
+  mouseHelper(this, "35%", 1, "35%", 1);
   const buttonLearnMore = this.querySelector(".learn_more_button");
   const indexProject = buttonLearnMore.getAttribute(
     constants.DATA_INDEX_ATTRIBUE
@@ -187,12 +187,12 @@ function removeClassFromCurrentMenuItem(nameClass) {
 
 function initMenu() {
   fatherDomElement = document.getElementById("menu");
-  techCategories.forEach((category) => {
+  techCategories.forEach((techCategory) => {
     fatherDomElement.innerHTML += ` <button onclick='menuItemClickHandler(this)' 
       class='button menu_button 
       ${
         constants.CLASS_MENU_BUTTON_DEFAULT_COLORS
-      }'>${category.toUpperCase()}</button>`;
+      }'>${techCategory}</button>`;
   });
   elemCurrentMenuItem = fatherDomElement.querySelector(".menu_button");
   removeClassFromCurrentMenuItem(constants.CLASS_MENU_BUTTON_DEFAULT_COLORS);

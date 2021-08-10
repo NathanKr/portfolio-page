@@ -41,7 +41,7 @@ const potfolioView = {
       </div>
       <div class="project_details_container_bottom">
         <h2 class="title"></h2>
-        <h4 class="sub_title"></h4>
+        <h4 class="project_category"></h4>
         <p class="description"></p>
         <div class="view_site">
           <span class="iconify" data-icon="mdi:open-in-new"></span>
@@ -68,8 +68,8 @@ const potfolioView = {
     this.setCurrentSlideImage(projectLogicObj, 0);
     elemIdPopupDetails.querySelector(".title").innerText =
       projectLogicObj.title;
-    elemIdPopupDetails.querySelector(".sub_title").innerText =
-      projectLogicObj.subTitle;
+    elemIdPopupDetails.querySelector(".project_category").innerText =
+      projectLogicObj.category;
     elemIdPopupDetails.querySelector(".description").innerText =
       projectLogicObj.description;
 
@@ -95,14 +95,15 @@ const potfolioView = {
       }
     }
 
-    let projectContainerDomElement = document.createElement('div');
-    projectContainerDomElement.className = 'project_container';
-    projectContainerDomElement.innerHTML =`<div
+    let projectContainerDomElement = document.createElement("div");
+    projectContainerDomElement.className = "project_container";
+    projectContainerDomElement.innerHTML = `<div
           class="project_container_front_side"
           style="
             background-image: ${background};
           "
-        ></div>
+        >
+        </div>
         <div class="project_container_back_side">
           <div class="back_side_container">
             <div class="back_side_container_item">
@@ -118,6 +119,6 @@ const potfolioView = {
         </div>`;
 
     fatherDomElement.appendChild(projectContainerDomElement);
-    return projectContainerDomElement; 
+    return projectContainerDomElement; // return the created projectContainer
   },
 };

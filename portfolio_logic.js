@@ -1,5 +1,4 @@
-
-function MoreInfo(url,show,mode){
+function MoreInfo(url, show, mode) {
   this.url = url;
   this.show = show;
   this.mode = mode; //video or site
@@ -7,7 +6,7 @@ function MoreInfo(url,show,mode){
 
 function ProjectLogic(
   title,
-  subTitle,
+  category,
   techs,
   description,
   backgroundImgFileName,
@@ -16,12 +15,11 @@ function ProjectLogic(
   moreInfo
 ) {
   this.title = title;
-  this.subTitle = subTitle;
+  this.category = category;
   this.description = description;
   this.techs = techs;
   this.backgroundImgFileName = backgroundImgFileName;
   this.imgsSliderFileNames = imgsSliderFileNames;
   this.index = index;
-  this.moreInfo = moreInfo
+  this.moreInfo = moreInfo;
 }
-

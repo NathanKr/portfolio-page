@@ -6,17 +6,17 @@
   --transition_timing_function_value: ease-in-out;
   --main_project_background_image_width: 500px;
   --main_project_background_image_height: 350px;
-  --body_background_color : #f5f5f5;
+  --body_background_color: #f5f5f5;
   --popup_width: 700px;
   --popup_height: 98vh;
 }
 
 body {
   font-family: "Raleway", sans-serif;
-  background-color: var(--body_background_color)
+  background-color: var(--body_background_color);
 }
 
-#top{
+#top {
   text-align: center;
 }
 
@@ -31,7 +31,7 @@ body {
   margin: 60px 0;
   border-bottom: 2px solid black;
   font-size: 40px;
-  color : #444649;
+  color: #444649;
 }
 /* *********** first page front and back ***********  */
 
@@ -52,12 +52,13 @@ body {
   margin: 15px;
 }
 
-
 .project_container_front_side {
   width: 100%;
   height: 100%;
   position: absolute;
   z-index: 0;
+  background-size: cover;
+  background-repeat:no-repeat;
 }
 
 .project_container_back_side:hover {
@@ -71,13 +72,13 @@ body {
   height: 100%;
   position: absolute;
   background-color: var(--body_background_color);
-  border: 1px solid black;;
+  border: 1px solid black;
   z-index: 1;
   opacity: 0; /*  ללא אטימות ז"א שקיפות מלאה */
 }
 
 .back_side_container {
-  display: flex;  
+  display: flex;
   flex-direction: column;
   height: 100%;
   position: relative;
@@ -90,6 +91,7 @@ body {
 
 .top_text {
   position: absolute;
+  width: 80%;
   left: 50%;
   transform: translateX(-50%);
   transition: opacity var(--transition_period), top var(--transition_period);
@@ -157,9 +159,10 @@ body {
   position: relative;
 }
 
-.project_details_container_bottom .sub_title {
+.project_details_container_bottom .project_category {
   border-bottom: 1px solid black;
   color: #c0c0c0;
+  text-transform: uppercase;
 }
 
 .project_details_container_bottom .view_site {
@@ -240,6 +243,7 @@ body {
   font-size: 16px;
   border: none;
   transition: background-color 1s;
+  text-transform: uppercase;
 }
 
 .menu_button_default_colors {

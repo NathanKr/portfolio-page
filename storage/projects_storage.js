@@ -1,12 +1,28 @@
 const projectsOwner = "Nathan Krasney";
-const techCategories = [constants.MENU_ITEM_ALL, "React", "ASP.net"];
+const techCategories = [constants.MENU_ITEM_ALL, "React", "ASP.net" , 'Node' , 'Android'];
 const projects = [
   new ProjectLogic(
-    "Proj1",
-    "proj1 sub title",
-    ["JavaScript" , 'React'],
-    "proj1 description",
-    "white-water-lily-5087465_640.jpg",
+    "Wind Notifier",
+    "Event Notification",
+    [
+      "Node",
+      "Puppeteer",
+      "Express",
+      "MongoDB",
+      "React",
+      "Redis",
+      "SendGrid",
+      "Typescript",
+      "Jest",
+      "Digital Ocean",
+      "Nginx",
+      "pm2",
+      "Git",
+      "Microservices",
+      "REST API",
+    ],
+    "Wind Notifier allows wind and kite surfers to receive email notifications when the wind is strong. It eliminates the need to manually poll wind stations for strong winds",
+    "wave-2089959_640.jpg",
     ["slide1.png", "slide2.png"],
     0,
     new MoreInfo(
@@ -16,11 +32,11 @@ const projects = [
     )
   ),
   new ProjectLogic(
-    "proj2",
-    "proj2 sub title",
-    ["aSP.Net"],
-    "proj2 description",
-    "ocean-3605547_640.jpg",
+    "Cash On Tab",
+    "Point of Sale",
+    ['C#', 'Android', 'RS232', 'Credit Card API - Shva', 'HTTP', 'SQLite', 'Web API'],
+    "proj description",
+    "cash-on-tab.png",
     ["slide1.png"],
     1,
     new MoreInfo(
