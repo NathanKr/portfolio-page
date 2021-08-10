@@ -2,9 +2,9 @@ const projectsOwner = "Nathan Krasney";
 const techCategories = [constants.MENU_ITEM_ALL, "React", "ASP.net"];
 const projects = [
   new ProjectLogic(
-    "proj1",
+    "Proj1",
     "proj1 sub title",
-    ["React", "JavaScript"],
+    ["JavaScript" , 'React'],
     "proj1 description",
     "white-water-lily-5087465_640.jpg",
     ["slide1.png", "slide2.png"],
@@ -18,9 +18,9 @@ const projects = [
   new ProjectLogic(
     "proj2",
     "proj2 sub title",
-    ["ASP.Net"],
+    ["aSP.Net"],
     "proj2 description",
-    "white-water-lily-5087465_640.jpg",
+    "ocean-3605547_640.jpg",
     ["slide1.png"],
     1,
     new MoreInfo(

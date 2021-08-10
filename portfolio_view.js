@@ -95,8 +95,9 @@ const potfolioView = {
       }
     }
 
-    const projectContainer = `<div class="project_container">
-        <div
+    let projectContainerDomElement = document.createElement('div');
+    projectContainerDomElement.className = 'project_container';
+    projectContainerDomElement.innerHTML =`<div
           class="project_container_front_side"
           style="
             background-image: ${background};
@@ -114,10 +115,9 @@ const potfolioView = {
               <button class="learn_more_button" ${constants.DATA_INDEX_ATTRIBUE}=${projectLogicObj.index}>LEARN MORE</button>
             </div>
           </div>
-        </div>
-      </div>`;
+        </div>`;
 
-    fatherDomElement.innerHTML += projectContainer;
-    return fatherDomElement.lastChild; // return the created projectContainer
+    fatherDomElement.appendChild(projectContainerDomElement);
+    return projectContainerDomElement; 
   },
 };

@@ -13,8 +13,11 @@
 
 body {
   font-family: "Raleway", sans-serif;
-  text-align: center;
   background-color: var(--body_background_color)
+}
+
+#top{
+  text-align: center;
 }
 
 .button {
@@ -48,6 +51,7 @@ body {
   display: inline-block;
   margin: 15px;
 }
+
 
 .project_container_front_side {
   width: 100%;
@@ -94,10 +98,13 @@ body {
 
 .top_text .title {
   text-align: center;
+  font-size: 22px;
 }
 
 .top_text .techs {
   color: var(--purple_color);
+  font-size: 17px;
+  font-weight: 600;
 }
 
 .learn_more_button {
@@ -118,7 +125,6 @@ body {
 }
 
 /* *********** popup \ details***********  */
-
 .center_screen {
   position: fixed;
   top: 50%;
@@ -233,7 +239,7 @@ body {
   font-weight: 600;
   font-size: 16px;
   border: none;
-  transition: background-color 2s;
+  transition: background-color 1s;
 }
 
 .menu_button_default_colors {
