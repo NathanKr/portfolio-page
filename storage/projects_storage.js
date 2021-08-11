@@ -34,7 +34,7 @@ const projects = [
   new ProjectLogic(
     "Cash On Tab",
     "Point of Sale",
-    ['C#', 'Android', 'RS232', 'Credit Card API - Shva', 'HTTP', 'SQLite', 'Web API'],
+    ['C#', "Java",'Android', 'RS232', 'Credit Card API - Shva', 'HTTP', 'SQLite', 'Web API'],
     "proj description",
     "cash-on-tab.png",
     ["slide1.png"],
