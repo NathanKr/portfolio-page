@@ -4,10 +4,10 @@
   --transition_period: 0.3s;
   --purple_color: #e31c6e;
   --transition_timing_function_value: ease-in-out;
-  --main_project_background_image_width: 500px;
-  --main_project_background_image_height: 350px;
+  --main_project_background_image_width: 390px;
+  --main_project_background_image_height: 300px;
   --body_background_color: #f5f5f5;
-  --popup_width: 700px;
+  --popup_width: 700px; /* slider images width is 700 px , height is 350px */
   --popup_height: 98vh;
 }
 
@@ -39,7 +39,7 @@ body {
   position: absolute;
   width: 94%;
   text-align: center;
-  background-color: white;
+  /* background-color: white; */
   left: 50%;
   transform: translateX(-50%);
 }
@@ -49,7 +49,7 @@ body {
   height: var(--main_project_background_image_height);
   position: relative;
   display: inline-block;
-  margin: 15px;
+  /* margin: 15px; */
 }
 
 .project_container_front_side {
@@ -57,8 +57,7 @@ body {
   height: 100%;
   position: absolute;
   z-index: 0;
-  background-size: cover;
-  background-repeat:no-repeat;
+  display: block;
 }
 
 .project_container_back_side:hover {
@@ -72,7 +71,6 @@ body {
   height: 100%;
   position: absolute;
   background-color: var(--body_background_color);
-  border: 1px solid black;
   z-index: 1;
   opacity: 0; /*  ללא אטימות ז"א שקיפות מלאה */
 }
@@ -147,9 +145,10 @@ body {
 }
 
 .project_details_container_top {
+  /* on my PC display the raio of width (700px - popup_width) to height is 2:1 */
   flex: 6;
   position: relative;
-  padding: 0 20px;
+  background-size: 100% 100%;
 }
 
 .project_details_container_bottom {

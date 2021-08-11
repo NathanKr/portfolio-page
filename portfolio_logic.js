@@ -11,7 +11,6 @@ function ProjectLogic(
   description,
   backgroundImgFileName,
   imgsSliderFileNames,
-  index,
   moreInfo
 ) {
   this.title = title;
@@ -20,6 +19,5 @@ function ProjectLogic(
   this.techs = techs;
   this.backgroundImgFileName = backgroundImgFileName;
   this.imgsSliderFileNames = imgsSliderFileNames;
-  this.index = index;
   this.moreInfo = moreInfo;
 }

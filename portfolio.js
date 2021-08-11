@@ -77,7 +77,8 @@ function initMouseEnterExit() {
     const project = projects[index];
     const projectDomObject = potfolioView.createNewProjectDomElement(
       projectsRootElem,
-      project
+      project,
+      index
     );
     const newFunc = resetState.bind(projectDomObject);
     newFunc();

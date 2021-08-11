@@ -82,9 +82,8 @@ const potfolioView = {
     elemMoreInfoUrl.innerText = getViewText(projectLogicObj);
   },
 
-  createNewProjectDomElement: function (fatherDomElement, projectLogicObj) {
+  createNewProjectDomElement: function (fatherDomElement, projectLogicObj,indexProject) {
     const imagePath = getImageUrl(projectLogicObj.backgroundImgFileName);
-    const background = `url('${imagePath}')`;
     let techs = "";
     for (let index = 0; index < projectLogicObj.techs.length; index++) {
       const tech = projectLogicObj.techs[index];
@@ -97,13 +96,11 @@ const potfolioView = {
 
     let projectContainerDomElement = document.createElement("div");
     projectContainerDomElement.className = "project_container";
-    projectContainerDomElement.innerHTML = `<div
+    projectContainerDomElement.innerHTML = `<img
           class="project_container_front_side"
-          style="
-            background-image: ${background};
-          "
+          src="${imagePath}"
+          alt="${projectLogicObj.title}"
         >
-        </div>
         <div class="project_container_back_side">
           <div class="back_side_container">
             <div class="back_side_container_item">
@@ -113,7 +110,7 @@ const potfolioView = {
               </div>
             </div>
             <div class="back_side_container_item">
-              <button class="learn_more_button" ${constants.DATA_INDEX_ATTRIBUE}=${projectLogicObj.index}>LEARN MORE</button>
+              <button class="learn_more_button" ${constants.DATA_INDEX_ATTRIBUE}=${indexProject}>LEARN MORE</button>
             </div>
           </div>
         </div>`;
