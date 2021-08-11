@@ -39,7 +39,8 @@ body {
   position: absolute;
   width: 94%;
   text-align: center;
-  /* background-color: white; */
+  display: flex;
+  flex-wrap: wrap;
   left: 50%;
   transform: translateX(-50%);
 }
@@ -49,7 +50,6 @@ body {
   height: var(--main_project_background_image_height);
   position: relative;
   display: inline-block;
-  /* margin: 15px; */
 }
 
 .project_container_front_side {

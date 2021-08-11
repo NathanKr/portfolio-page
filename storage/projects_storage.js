@@ -8,8 +8,8 @@ const techCategories = [
 ];
 const projects = [
   new ProjectLogic(
-    "Nathan Krasney Mentor \\ Instructor",
-    "Marketing  : Personal Web Site",
+    "Nathan Krasney",
+    "Marketing : Personal Web Site",
     ["React", "Node", "Express", "Digital Ocean", "Nginx", "SSL"],
     "Static SPA web site based on React ",
     "nathan_krasney_com.png",

@@ -6,10 +6,11 @@ I like the portfolio page <a href='http://findmatthew.com/'>here</a> so i am tak
 
 <h2>Requirements</h2>
 <ul>
-<li>Nice UI</li>
+<li>Nice and simple UI</li>
 <li>Responsive</li>
-<li>Easy to add new project in the portfolio - seperation of concerns</li>
-<li>This is only one page so i am not using react i use vanila js</li>
+<li>Configureable - Easy to add new project in the portfolio</li>
+<li>Generic - This is only one page so i am  using vanila js</li>
+<li>Simplicity - no external module are used beside fonts and icons</li>
 </ul>
 
 <h2>Points of interest</h2>
