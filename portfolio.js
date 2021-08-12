@@ -66,6 +66,13 @@ function mouseLeaveHandler() {
   mouseHelper(this, 0, 0, 0, 0);
 }
 
+// function resetState(domElement) {
+//   // this --> dom element
+//   // console.log('resetState');
+//   const newFunc = mouseLeaveHandler.bind(domElement);
+//   newFunc();
+// }
+
 function resetState() {
   const newFunc = mouseLeaveHandler.bind(this);
   newFunc();
