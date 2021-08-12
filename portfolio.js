@@ -30,13 +30,11 @@ const portfoloioJs = {
   },
   // ************* projects **************
   showProjectsByTech: function (desiredTechName) {
-    const titlesToShow = portfoloioJs.getProjectTitlesFromTech(desiredTechName);
-    const titlesAll = portfoloioJs.getProjectTitlesFromTech(
-      constants.MENU_ITEM_ALL
-    );
+    const titlesToShow = this.getProjectTitlesFromTech(desiredTechName);
+    const titlesAll = this.getProjectTitlesFromTech(constants.MENU_ITEM_ALL);
     titlesAll.forEach((title) => {
       let domProjectContainer =
-        portfoloioJs.mapProjectTitleToProjectDomObject.get(title);
+        this.mapProjectTitleToProjectDomObject.get(title);
       domProjectContainer.style.display = titlesToShow.includes(title)
         ? "inline-block"
         : "none";
@@ -60,16 +58,22 @@ const portfoloioJs = {
   },
 
   mouseEnterHandler: function () {
-    portfoloioJs.mouseHelper(this, "35%", 1, "35%", 1);
-    const buttonLearnMore = this.querySelector(".learn_more_button");
-    const indexProject = buttonLearnMore.getAttribute(
-      constants.DATA_INDEX_ATTRIBUE
-    );
-    portfoloioJs.objCurrentProjectLogic = projects[indexProject];
-    portfoloioJs.sliderIndex = 0;
+    if (!portfoloioJs.popupIsActive()) {
+      // mouseleave is not relevant once pop up is active
+      portfoloioJs.mouseHelper(this, "35%", 1, "35%", 1);
+      const buttonLearnMore = this.querySelector(".learn_more_button");
+      const indexProject = buttonLearnMore.getAttribute(
+        constants.DATA_INDEX_ATTRIBUE
+      );
+      portfoloioJs.objCurrentProjectLogic = projects[indexProject];
+      portfoloioJs.sliderIndex = 0;
+    }
   },
   mouseLeaveHandler: function () {
-    portfoloioJs.mouseHelper(this, 0, 0, 0, 0);
+    if (!portfoloioJs.popupIsActive()) {
+      // mouseleave is not relevant once pop up is active
+      portfoloioJs.mouseHelper(this, 0, 0, 0, 0);
+    }
   },
   resetState: function (domElement) {
     const newFunc = portfoloioJs.mouseLeaveHandler.bind(domElement);
@@ -86,17 +90,11 @@ const portfoloioJs = {
         index
       );
 
-      portfoloioJs.resetState(projectDomObject);
-      projectDomObject.addEventListener(
-        "mouseenter",
-        portfoloioJs.mouseEnterHandler
-      );
-      projectDomObject.addEventListener(
-        "mouseleave",
-        portfoloioJs.mouseLeaveHandler
-      );
+      this.resetState(projectDomObject);
+      projectDomObject.addEventListener("mouseenter", this.mouseEnterHandler);
+      projectDomObject.addEventListener("mouseleave", this.mouseLeaveHandler);
 
-      portfoloioJs.mapProjectTitleToProjectDomObject.set(
+      this.mapProjectTitleToProjectDomObject.set(
         project.title,
         projectDomObject
       );
@@ -122,22 +120,22 @@ const portfoloioJs = {
   },
 
   closeHandler: function () {
-    portfoloioJs.hideDetails();
+    this.hideDetails();
   },
 
   /**
    * slideLeftHandler is used with onclick on the html because iconify might not be ready
    */
   slideLeftHandler: function () {
-    if (portfoloioJs.sliderIndex === 0) {
-      portfoloioJs.sliderIndex =
-        portfoloioJs.objCurrentProjectLogic.imgsSliderFileNames.length - 1;
+    if (this.sliderIndex === 0) {
+      this.sliderIndex =
+        this.objCurrentProjectLogic.imgsSliderFileNames.length - 1;
     } else {
-      portfoloioJs.sliderIndex--;
+      this.sliderIndex--;
     }
     potfolioView.setCurrentSlideImage(
-      portfoloioJs.objCurrentProjectLogic,
-      portfoloioJs.sliderIndex
+      this.objCurrentProjectLogic,
+      this.sliderIndex
     );
   },
 
@@ -146,22 +144,22 @@ const portfoloioJs = {
    */
   slideRightHandler: function () {
     if (
-      portfoloioJs.sliderIndex + 1 ===
-      portfoloioJs.objCurrentProjectLogic.imgsSliderFileNames.length
+      this.sliderIndex + 1 ===
+      this.objCurrentProjectLogic.imgsSliderFileNames.length
     ) {
-      portfoloioJs.sliderIndex = 0;
+      this.sliderIndex = 0;
     } else {
-      portfoloioJs.sliderIndex++;
+      this.sliderIndex++;
     }
     potfolioView.setCurrentSlideImage(
-      portfoloioJs.objCurrentProjectLogic,
-      portfoloioJs.sliderIndex
+      this.objCurrentProjectLogic,
+      this.sliderIndex
     );
   },
 
   initDetails: function () {
     // hideDetails is also th click handler of button_close
-    portfoloioJs.hideDetails();
+    this.hideDetails();
 
     const listLearnMoreButton = document.querySelectorAll(
       ".project_container_back_side .learn_more_button"
@@ -174,7 +172,7 @@ const portfoloioJs = {
 
       elemLearnMoreButton.onclick = () => {
         const objProject = projects[index];
-        portfoloioJs.showDetails();
+        this.showDetails();
         potfolioView.fillDetailsDomElement(objProject);
       };
     });
@@ -187,35 +185,31 @@ const portfoloioJs = {
 
   menuItemClickHandler: (elemNewSelectedMenuItem) => {
     // remove selected from prev and add default
-    portfoloioJs.removeClassFromCurrentMenuItem(
+    this.removeClassFromCurrentMenuItem(
       constants.CLASS_MENU_BUTTON_ACTIVE_COLORS
     );
-    portfoloioJs.addClassToCurrentMenuItem(
-      constants.CLASS_MENU_BUTTON_DEFAULT_COLORS
-    );
+    this.addClassToCurrentMenuItem(constants.CLASS_MENU_BUTTON_DEFAULT_COLORS);
 
     // set current to new
-    portfoloioJs.elemCurrentMenuItem = elemNewSelectedMenuItem;
+    this.elemCurrentMenuItem = elemNewSelectedMenuItem;
 
     // remove default from new selected and add selected
-    portfoloioJs.removeClassFromCurrentMenuItem(
+    this.removeClassFromCurrentMenuItem(
       constants.CLASS_MENU_BUTTON_DEFAULT_COLORS
     );
-    portfoloioJs.addClassToCurrentMenuItem(
-      constants.CLASS_MENU_BUTTON_ACTIVE_COLORS
-    );
+    this.addClassToCurrentMenuItem(constants.CLASS_MENU_BUTTON_ACTIVE_COLORS);
 
     const selectedTechName = elemNewSelectedMenuItem.innerText;
-    portfoloioJs.showProjectsByTech(selectedTechName);
+    this.showProjectsByTech(selectedTechName);
   },
 
   addClassToCurrentMenuItem: function (nameClass) {
-    portfoloioJs.elemCurrentMenuItem.className += ` ${nameClass}`;
+    this.elemCurrentMenuItem.className += ` ${nameClass}`;
   },
 
   removeClassFromCurrentMenuItem: function (nameClass) {
-    portfoloioJs.elemCurrentMenuItem.className =
-      portfoloioJs.elemCurrentMenuItem.className.replace(nameClass, "");
+    this.elemCurrentMenuItem.className =
+      this.elemCurrentMenuItem.className.replace(nameClass, "");
   },
 
   initMenu: function () {
@@ -225,14 +219,11 @@ const portfoloioJs = {
       class='button menu_button 
       ${constants.CLASS_MENU_BUTTON_DEFAULT_COLORS}'>${techCategory}</button>`;
     });
-    portfoloioJs.elemCurrentMenuItem =
-      fatherDomElement.querySelector(".menu_button");
-    portfoloioJs.removeClassFromCurrentMenuItem(
+    this.elemCurrentMenuItem = fatherDomElement.querySelector(".menu_button");
+    this.removeClassFromCurrentMenuItem(
       constants.CLASS_MENU_BUTTON_DEFAULT_COLORS
     );
-    portfoloioJs.addClassToCurrentMenuItem(
-      constants.CLASS_MENU_BUTTON_ACTIVE_COLORS
-    );
+    this.addClassToCurrentMenuItem(constants.CLASS_MENU_BUTTON_ACTIVE_COLORS);
   },
 };
 
