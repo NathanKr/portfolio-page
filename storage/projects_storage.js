@@ -93,10 +93,38 @@ const projects = [
     "Chat App",
     "Communication",
     ["React", "Hooks", "Firebase", "Semantic UI React"],
-    "The client is implemented using React hooks. The server is implemented using Firebase to enable chat and authentication",
-    "chat_app.png",["chat_app_slider_1.png", "chat_app_slider_2.png"],
+    "The client is implemented using React hooks. The server is implemented using Firebase to enable chat, authentication and messages storage",
+    "chat_app.png",
+    ["chat_app_slider_1.png", "chat_app_slider_2.png"],
     new MoreInfo(
       "https://www.youtube.com/watch?v=3bzcJonDPc8",
+      true,
+      constants.MODE_VIDEO
+    )
+  ),
+  new ProjectLogic(
+    "Follow My Route",
+    "Social : Location Sharing",
+    [
+      "Android",
+      "Java",
+      "Google Location API",
+      "HTTP",
+      "ASP.net",
+      "C#",
+      "SQL server",
+    ],
+    "Share location between parents and kids , friends , workers and boss. The client locations is saved on the server data base and can be shared by followers.",
+    "follow_my_route.png",
+    [
+      "follow_my_route_slider_1.png",
+      "follow_my_route_slider_2.png",
+      "follow_my_route_slider_3.png",
+      "follow_my_route_slider_4.png",
+      "follow_my_route_slider_5.png",
+    ],
+    new MoreInfo(
+      "https://www.youtube.com/watch?v=DKoRnBX9m1A",
       true,
       constants.MODE_VIDEO
     )
