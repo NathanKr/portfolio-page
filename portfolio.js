@@ -66,15 +66,9 @@ function mouseLeaveHandler() {
   mouseHelper(this, 0, 0, 0, 0);
 }
 
-// function resetState(domElement) {
-//   // this --> dom element
-//   // console.log('resetState');
-//   const newFunc = mouseLeaveHandler.bind(domElement);
-//   newFunc();
-// }
 
-function resetState() {
-  const newFunc = mouseLeaveHandler.bind(this);
+function resetState(domElement) {
+  const newFunc = mouseLeaveHandler.bind(domElement);
   newFunc();
 }
 
@@ -87,8 +81,8 @@ function initMouseEnterExit() {
       project,
       index
     );
-    const newFunc = resetState.bind(projectDomObject);
-    newFunc();
+
+    resetState(projectDomObject)
     projectDomObject.addEventListener("mouseenter", mouseEnterHandler);
     projectDomObject.addEventListener("mouseleave", mouseLeaveHandler);
 
