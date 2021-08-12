@@ -18,7 +18,7 @@ const projects = [
       "nathan_krasney_com_slider_2.png",
       "nathan_krasney_com_slider_3.png",
     ],
-    new MoreInfo("https://nathankrasney.com/", true,constants.MODE_SITE)
+    new MoreInfo("https://nathankrasney.com/", true, constants.MODE_SITE)
   ),
   new ProjectLogic(
     "Cash On Tab",
@@ -88,6 +88,18 @@ const projects = [
       "learn_online_courses_slider_4.png",
     ],
     new MoreInfo("", false) //todo change to video
+  ),
+  new ProjectLogic(
+    "Chat App",
+    "Communication",
+    ["React", "Hooks", "Firebase", "Semantic UI React"],
+    "The client is implemented using React hooks. The server is implemented using Firebase to enable chat and authentication",
+    "chat_app.png",["chat_app_slider_1.png", "chat_app_slider_2.png"],
+    new MoreInfo(
+      "https://www.youtube.com/watch?v=3bzcJonDPc8",
+      true,
+      constants.MODE_VIDEO
+    )
   ),
   new ProjectLogic(
     "Wind Notifier",

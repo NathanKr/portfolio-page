@@ -42,24 +42,24 @@ const portfoloioJs = {
   },
   // ************* mouse enter \ exit **************
   mouseHelper: function (
-    _this,
+    domElemProject,
     textTop,
     textOpacity,
     buttonBottom,
     buttonOpacity
   ) {
-    const elemTopText = _this.querySelector(".top_text");
+    const elemTopText = domElemProject.querySelector(".top_text");
     elemTopText.style.top = textTop;
     elemTopText.style.opacity = textOpacity;
 
-    const elemBottomButton = _this.querySelector(".learn_more_button");
+    const elemBottomButton = domElemProject.querySelector(".learn_more_button");
     elemBottomButton.style.bottom = buttonBottom;
     elemBottomButton.style.opacity = buttonOpacity;
   },
 
   mouseEnterHandler: function () {
     if (!portfoloioJs.popupIsActive()) {
-      // mouseleave is not relevant once pop up is active
+      // mouseEnter is not relevant once pop up is active
       portfoloioJs.mouseHelper(this, "35%", 1, "35%", 1);
       const buttonLearnMore = this.querySelector(".learn_more_button");
       const indexProject = buttonLearnMore.getAttribute(
@@ -71,7 +71,7 @@ const portfoloioJs = {
   },
   mouseLeaveHandler: function () {
     if (!portfoloioJs.popupIsActive()) {
-      // mouseleave is not relevant once pop up is active
+      // mouseLeave is not relevant once pop up is active
       portfoloioJs.mouseHelper(this, 0, 0, 0, 0);
     }
   },
@@ -102,8 +102,8 @@ const portfoloioJs = {
   },
   //  ************* details **************
   popupIsActive: function () {
-    potfolioView.getElemCenterScreen().style.zIndex ===
-      constants.POPUP_ON_ZINDEX;
+    return (potfolioView.getElemCenterScreen().style.zIndex ===
+      constants.POPUP_ON_ZINDEX);
   },
   showDetails: function () {
     potfolioView.getElemCenterScreen().style.visibility = "visible";
@@ -183,7 +183,7 @@ const portfoloioJs = {
     potfolioView.createPopupDetails(fatherDomElement);
   },
 
-  menuItemClickHandler: (elemNewSelectedMenuItem) => {
+  menuItemClickHandler: function(elemNewSelectedMenuItem)  {
     // remove selected from prev and add default
     this.removeClassFromCurrentMenuItem(
       constants.CLASS_MENU_BUTTON_ACTIVE_COLORS
