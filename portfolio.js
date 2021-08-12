@@ -92,9 +92,13 @@ function initMouseEnterExit() {
 
 //  ************* details **************
 
+function popupIsActive(){
+  potfolioView.getElemCenterScreen().style.zIndex === constants.POPUP_ON_ZINDEX
+}
+
 function showDetails() {
   potfolioView.getElemCenterScreen().style.visibility = "visible";
-  potfolioView.getElemCenterScreen().style.zIndex = "100";
+  potfolioView.getElemCenterScreen().style.zIndex = constants.POPUP_ON_ZINDEX;
 }
 
 /**
@@ -102,7 +106,7 @@ function showDetails() {
  */
 function hideDetails() {
   potfolioView.getElemCenterScreen().style.visibility = "hidden";
-  potfolioView.getElemCenterScreen().style.zIndex = "-1";
+  potfolioView.getElemCenterScreen().style.zIndex = constants.POPUP_OFF_ZINDEX;
 }
 
 function closeHandler() {
