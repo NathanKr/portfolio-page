@@ -30,11 +30,11 @@ const potfolioView = {
       style="background: white"
     >
       <div class="project_details_container_top">
-      <i onclick='slideLeftHandler()' 
+      <i onclick='portfoloioJs.slideLeftHandler()' 
         class="button_left iconify arrow" 
         data-icon="mdi:chevron-left">
       </i>
-        <i onclick='slideRightHandler()'
+        <i onclick='portfoloioJs.slideRightHandler()'
         class="button_right iconify arrow"
         data-icon="mdi:chevron-right"
         ></i>
@@ -47,7 +47,7 @@ const potfolioView = {
           <span class="iconify" data-icon="mdi:open-in-new"></span>
           <a href="" target="_blank"></a>
         </div>
-        <span class="button_close button iconify" onclick='closeHandler()' data-icon="mdi:close"></span>
+        <span class="button_close button iconify" onclick='portfoloioJs.closeHandler()' data-icon="mdi:close"></span>
       </div>
     </div>
 `;
