@@ -1,4 +1,4 @@
-const projectsOwner = "Nathan Krasney";
+const projectsOwner = "NYNK";
 const techCategories = [
   constants.MENU_ITEM_ALL,
   "React",
