@@ -56,7 +56,7 @@ const projects = [
       "OOD",
       "UML",
     ],
-    "UltraShape® is the first and only FDA-cleared, non-invasive body-shaping procedure to use focused, pulsed ultrasound energy to selectively destroy fat cells. Responsible for the development of software to hardware interfaces and software tools for the transducers production lines",
+    "UltraShape® is the first and only FDA-cleared, non-invasive body-shaping procedure to use focused, pulsed ultrasound energy to selectively destroy fat cells. ",
     "ultrashape.jpg",
     ["ultrashape_slider_1.jpg", "ultrashape_slider_2.jpg"],
     new MoreInfo(
