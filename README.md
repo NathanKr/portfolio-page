@@ -1,5 +1,5 @@
 <h2>Motivation</h2>
-Any software developer \ software house need a portfolio page. You might take all ready implemented one like in WIX but as a developer i like to implement it my self
+Any software developer looking for a job or freelancer \ software house looking for more projects need a portfolio page. You might take all ready implemented one like in WIX but as a developer i like to implement it my self
 
 <h2>Inspiration</h2>
 I like the portfolio page <a href='http://findmatthew.com/'>here</a> so i am taking the UI design from there and doing the implementation my self
@@ -14,10 +14,10 @@ I like the portfolio page <a href='http://findmatthew.com/'>here</a> so i am tak
 <li>Simplicity - no external module are used beside fonts and icons</li>
 </ul>
 
-<h2>Setup</h2>
+<h2>Fit this project to your portfolio</h2>
 If you want to use this project as your portfolio page you need to do the following 
 <ul>
-<li>Replace projects_storage.js with your own values. </li>
+<li>Replace projects_storage.js with your own values</li>
 <li>Replace matching images in images directory. Front project image is 390px X 300px , project sliders images are 700px X 350 px. Your images can be different but try to keep the aspect ratio or change css variables (main_project_background_image_width,main_project_background_image_height,popup_width) </li>
 </ul>
 
