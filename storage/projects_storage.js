@@ -150,7 +150,7 @@ const projects = [
   ),
   new ProjectLogic(
     "FlashAd",
-    "Retail : Location Based Notification",
+    "Retail Advertizing : Location Based Notification",
     [
       "Android",
       "Java",
@@ -161,7 +161,7 @@ const projects = [
       "SQL server",
       "GoDaddy",
     ],
-    "The FlashAd system implements a new advertising approach for smartphones in which the Advertiser (company/store) itself can launch a campaign in Real-Time based on a specific rule",
+    "The FlashAd system implements a new advertising approach for smartphones in which the Advertiser (company/store) itself can launch a campaign in Real-Time based on a specific rule and using an admin panel",
     "flash_ad.png",
     ["flash_ad_slider_1.png", "flash_ad_slider_2.png", "flash_ad_slider_3.png"],
     new MoreInfo("", false)
