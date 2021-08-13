@@ -76,8 +76,8 @@ const projects = [
       "Entity Framework",
       "SQL Server",
       "Azure",
-      "SQL",
       "Pay Pal API",
+      "ASP.net",
     ],
     "Learn Online Courses is a web platform that help teachers to create online courses and help students to learn courses online anytime anywhere.",
     "learn_online_courses.png",
@@ -165,5 +165,22 @@ const projects = [
     "flash_ad.png",
     ["flash_ad_slider_1.png", "flash_ad_slider_2.png", "flash_ad_slider_3.png"],
     new MoreInfo("", false)
+  ),
+  new ProjectLogic(
+    "Jumper Start Plus",
+    "Education : Math Game",
+    ["Android", "Java", "Open GL"],
+    "Jumper Start Plus is : educational , fun ,simple , math game for kids age 5 - 10. Play the game , have fun , collect coins and learn math addition operation along the way. It is part of 4 educational math games series",
+    "jumper_start_plus.png",
+    [
+      "jumper_start_plus_slider_1.png",
+      "jumper_start_plus_slider_2.png",
+      "jumper_start_plus_slider_3.png",
+    ],
+    new MoreInfo(
+      "https://www.youtube.com/watch?v=Dem_La1dKp4&t=6s",
+      true,
+      constants.MODE_VIDEO
+    )
   ),
 ];
