@@ -148,4 +148,22 @@ const projects = [
     ["wind_notifier_slider_1.png", "wind_notifier_slider_2.png"],
     new MoreInfo("", false)
   ),
+  new ProjectLogic(
+    "FlashAd",
+    "Retail : Location Based Notification",
+    [
+      "Android",
+      "Java",
+      "HTTP",
+      "Google Location API",
+      "Push Notification",
+      "ASP.net",
+      "SQL server",
+      "GoDaddy",
+    ],
+    "The FlashAd system implements a new advertising approach for smartphones in which the Advertiser (company/store) itself can launch a campaign in Real-Time based on a specific rule",
+    "flash_ad.png",
+    ["flash_ad_slider_1.png", "flash_ad_slider_2.png", "flash_ad_slider_3.png"],
+    new MoreInfo("", false)
+  ),
 ];
