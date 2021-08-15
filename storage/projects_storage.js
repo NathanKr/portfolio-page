@@ -87,7 +87,11 @@ const projects = [
       "learn_online_courses_slider_3.jpg",
       "learn_online_courses_slider_4.jpg",
     ],
-    new MoreInfo("", false) //todo change to video
+    new MoreInfo(
+      "https://www.youtube.com/watch?v=AvEIom4TCC4",
+      true,
+      constants.MODE_VIDEO
+    ) //todo change to video
   ),
   new ProjectLogic(
     "Chat App",
