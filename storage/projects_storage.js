@@ -8,6 +8,35 @@ const techCategories = [
 ];
 const projects = [
   new ProjectLogic(
+    "Learn Online Courses",
+    "eLearning : Create and Learn Courses Online",
+    [
+      "ASP.net MVC",
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Entity Framework",
+      "SQL Server",
+      "Azure",
+      "Pay Pal API",
+      "ASP.net",
+    ],
+    "Learn Online Courses is a web platform that help teachers to create online courses and help students to learn courses online anytime anywhere.",
+    "learn_online_courses.jpg",
+    [
+      "learn_online_courses_slider_1.jpg",
+      "learn_online_courses_slider_2.jpg",
+      "learn_online_courses_slider_3.jpg",
+      "learn_online_courses_slider_4.jpg",
+    ],
+    new MoreInfo(
+      "https://www.youtube.com/watch?v=AvEIom4TCC4",
+      true,
+      constants.MODE_VIDEO
+    ) //todo change to video
+  ),
+
+  new ProjectLogic(
     "Nathan Krasney",
     "Marketing : Personal Web Site",
     ["React", "Node", "Express", "Digital Ocean", "Nginx", "SSL"],
@@ -64,34 +93,6 @@ const projects = [
       true,
       constants.MODE_SITE
     )
-  ),
-  new ProjectLogic(
-    "Learn Online Courses",
-    "eLearning : Create and Learn Courses Online",
-    [
-      "ASP.net MVC",
-      "HTML",
-      "CSS",
-      "JavaScript",
-      "Entity Framework",
-      "SQL Server",
-      "Azure",
-      "Pay Pal API",
-      "ASP.net",
-    ],
-    "Learn Online Courses is a web platform that help teachers to create online courses and help students to learn courses online anytime anywhere.",
-    "learn_online_courses.jpg",
-    [
-      "learn_online_courses_slider_1.jpg",
-      "learn_online_courses_slider_2.jpg",
-      "learn_online_courses_slider_3.jpg",
-      "learn_online_courses_slider_4.jpg",
-    ],
-    new MoreInfo(
-      "https://www.youtube.com/watch?v=AvEIom4TCC4",
-      true,
-      constants.MODE_VIDEO
-    ) //todo change to video
   ),
   new ProjectLogic(
     "Chat App",
